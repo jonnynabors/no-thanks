@@ -2,8 +2,7 @@ package io.nothanks.nothanks.card;
 
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -20,5 +19,11 @@ public class CardService {
         return initialDeckOf32Cards;
     }
 
-
+    public Set<Card> buildDeckWith9CardsRemoved() {
+        List<Card> initialDeck = initializeDeck();
+        Collections.shuffle(initialDeck);
+        Set<Card>randomizedDeck = new HashSet<>(initialDeck.subList(0, 24));
+        randomizedDeck.forEach(card -> System.out.println(card.getValue()));
+        return randomizedDeck;
+    }
 }
