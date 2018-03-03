@@ -22,8 +22,6 @@ public class CardService {
     public Set<Card> buildDeckWith9CardsRemoved() {
         List<Card> initialDeck = initializeDeck();
         Collections.shuffle(initialDeck);
-        Set<Card>randomizedDeck = new HashSet<>(initialDeck.subList(0, 24));
-        randomizedDeck.forEach(card -> System.out.println(card.getValue()));
-        return randomizedDeck;
+        return new HashSet<>(initialDeck.subList(0, 24));
     }
 }
