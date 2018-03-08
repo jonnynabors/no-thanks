@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Game {
 
-    @Autowired
     private CardService cardService;
 
+    @Autowired
     public Game(CardService cardService) {
         this.cardService = cardService;
     }
