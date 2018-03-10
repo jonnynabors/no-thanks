@@ -1,20 +1,19 @@
 package io.nothanks.nothanks.game;
 
-import io.nothanks.nothanks.card.CardService;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.nothanks.nothanks.card.Card;
+import io.nothanks.nothanks.deck.Deck;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Game {
 
-    private CardService cardService;
-
-    @Autowired
-    public Game(CardService cardService) {
-        this.cardService = cardService;
-    }
+    private Deck deck;
 
     public void initializeGame() {
-        cardService.buildDeckWith9CardsRemoved();
+        deck = Deck.with9CardsRemoved();
+    }
+
+    public Card dealCard() {
+        return null;
     }
 }

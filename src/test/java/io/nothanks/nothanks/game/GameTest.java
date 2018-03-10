@@ -1,27 +1,19 @@
 package io.nothanks.nothanks.game;
 
-import io.nothanks.nothanks.card.CardService;
+import io.nothanks.nothanks.card.Card;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-
-import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class GameTest {
 
-    @Mock
-    private CardService cardService;
-
-    @InjectMocks
-    private Game game = new Game(cardService);
+    private Game game = new Game();
 
     @Test
-    public void shouldInitializeGame() {
+    public void shouldDealTopCardOfDeckWhenGameStarts() {
         game.initializeGame();
-        verify(cardService).buildDeckWith9CardsRemoved();
+        Card card = game.dealCard();
     }
 
 }
