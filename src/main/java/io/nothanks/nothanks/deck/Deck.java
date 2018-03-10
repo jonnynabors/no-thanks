@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 
 public class Deck {
 
-    private Set<Card> cards;
+    private Stack<Card> cards;
 
     private static List<Card> initializeDeck() {
         List<Card> initialDeckOf32Cards = new ArrayList<>();
@@ -24,15 +24,19 @@ public class Deck {
         Deck deck = new Deck();
         List<Card> initialDeck = initializeDeck();
         Collections.shuffle(initialDeck);
-        deck.setCards(new HashSet<>(initialDeck.subList(0, 24)));
+
+        List<Card> cards = initialDeck.subList(0, 24);
+        Stack<Card> cardsStack = new Stack<>();
+        cardsStack.addAll(cards);
+        deck.setCards(cardsStack);
         return deck;
     }
 
-    public Set<Card> getCards() {
+    public Stack<Card> getCards() {
         return cards;
     }
 
-    public void setCards(Set<Card> cards) {
+    public void setCards(Stack<Card> cards) {
         this.cards = cards;
     }
 }
