@@ -2,7 +2,10 @@ package io.nothanks.nothanks.deck;
 
 import io.nothanks.nothanks.card.Card;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Stack;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -25,9 +28,8 @@ public class Deck {
         List<Card> initialDeck = initializeDeck();
         Collections.shuffle(initialDeck);
 
-        List<Card> cards = initialDeck.subList(0, 24);
         Stack<Card> cardsStack = new Stack<>();
-        cardsStack.addAll(cards);
+        cardsStack.addAll(initialDeck.subList(0, 24));
         deck.setCards(cardsStack);
         return deck;
     }

@@ -14,6 +14,6 @@ public class Game {
     }
 
     public Card dealCard() {
-        return null;
+        return deck.getCards().pop();
     }
 }
