@@ -15,7 +15,6 @@ public class Game {
     }
 
     public void initializeGame() {
-        cardService.initializeDeck();
         cardService.buildDeckWith9CardsRemoved();
     }
 }

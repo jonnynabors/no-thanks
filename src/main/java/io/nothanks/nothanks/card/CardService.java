@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 @Service
 public class CardService {
 
-    public List<Card> initializeDeck() {
+    private List<Card> initializeDeck() {
         List<Card> initialDeckOf32Cards = new ArrayList<>();
 
         List<Integer> range = IntStream.rangeClosed(3, 35)

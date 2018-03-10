@@ -12,19 +12,10 @@ public class CardServiceTest {
     private CardService cardService = new CardService();
 
     @Test
-    public void shouldBuildDeckOf32Cards() {
-        List<Card> actual = cardService.initializeDeck();
-
-        assertEquals(33, actual.size());
-    }
-
-    @Test
-    public void shouldRemove9CardsRandomly() {
+    public void shouldBuildDeckOf32CardsAndRemove9CardsRandomly() {
         Set<Card> actual = cardService.buildDeckWith9CardsRemoved();
 
         assertEquals(24, actual.size());
     }
-
-
 
 }

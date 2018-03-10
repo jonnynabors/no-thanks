@@ -21,7 +21,6 @@ public class GameTest {
     @Test
     public void shouldInitializeGame() {
         game.initializeGame();
-        verify(cardService).initializeDeck();
         verify(cardService).buildDeckWith9CardsRemoved();
     }
 
