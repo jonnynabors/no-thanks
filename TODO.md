@@ -4,7 +4,7 @@
 ~~A deck of cards numbered 3-35 with 9 removed from the deck.~~
 
 ## Game Start
-11 tokens for each player  
+~~11 tokens for each player~~  
 Maintain score of player over 3 rounds  
 
 
@@ -19,7 +19,7 @@ When to pick up a card.
 What to do if no tokens left in hand. 
 
 ## Turns
-Pick up a card.  
+~~Pick up a card.~~  
 Play a token.
 Increase count of tokens.  
  
