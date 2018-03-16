@@ -42,4 +42,8 @@ public class Game {
     public void setPlayers(List<Player> players) {
         this.players = players;
     }
+
+    public void pass(Player player) {
+        player.decrementChipCount();
+    }
 }

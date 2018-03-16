@@ -38,4 +38,8 @@ public class Player {
     public void incrementChipCount(int newChips) {
         this.chipCount += newChips;
     }
+
+    public void decrementChipCount() {
+        this.chipCount--;
+    }
 }
