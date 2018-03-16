@@ -30,9 +30,9 @@ public class Game {
         return deck.getCards().peek();
     }
 
-    public void pickUpCardForPlayer(Player player, int i) {
+    public void pickUpCardForPlayer(Player player, int pickedUpChips) {
         player.getCardsInHand().add(deck.getCards().pop());
-        player.incrementChipCount(i);
+        player.incrementChipCount(pickedUpChips);
     }
 
     public List<Player> getPlayers() {
