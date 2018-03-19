@@ -35,12 +35,21 @@ public class GameTest {
     }
 
     @Test
-    public void shouldBeAbleToPassIfChipCountAtLeastOne() {
+    public void shouldBeAbleToPassIfChipCountAtLeastOne() throws NoChipsInHandException {
         Game singlePlayerGame = Game.withOnePlayer(player1);
         singlePlayerGame.initializeGame();
         singlePlayerGame.dealCard();
         singlePlayerGame.pass(player1);
         assertEquals(10, singlePlayerGame.getPlayers().get(0).getChipCount());
+    }
+
+    @Test(expected = NoChipsInHandException.class)
+    public void shouldNotBeAbleToPassIfChipCountIsZero() throws NoChipsInHandException {
+        Game singlePlayerGame = Game.withOnePlayer(player1);
+        singlePlayerGame.getPlayers().get(0).setChipCount(0);
+        singlePlayerGame.initializeGame();
+        singlePlayerGame.dealCard();
+        singlePlayerGame.pass(player1);
     }
 
 }

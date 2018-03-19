@@ -20,8 +20,8 @@ What to do if no tokens left in hand.
 
 ## Turns
 ~~Pick up a card.~~  
-Play a token.
-Increase count of tokens.  
+~~Play a token.~~
+~~Increase count of tokens on card pickup.~~  
  
 ## AI
 How do we play this against a computer?

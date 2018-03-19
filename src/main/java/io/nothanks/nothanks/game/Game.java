@@ -35,15 +35,19 @@ public class Game {
         player.incrementChipCount(pickedUpChips);
     }
 
+    public void pass(Player player) throws NoChipsInHandException {
+        if(player.getChipCount() > 0)
+            player.decrementChipCount();
+        else{
+            throw new NoChipsInHandException();
+        }
+    }
+
     public List<Player> getPlayers() {
         return players;
     }
 
     public void setPlayers(List<Player> players) {
         this.players = players;
-    }
-
-    public void pass(Player player) {
-        player.decrementChipCount();
     }
 }
