@@ -3,9 +3,11 @@ package io.nothanks.nothanks.game;
 import io.nothanks.nothanks.card.Card;
 import io.nothanks.nothanks.deck.Deck;
 import io.nothanks.nothanks.player.Player;
+import io.nothanks.nothanks.score.FinalScore;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Component
@@ -49,5 +51,15 @@ public class Game {
 
     public void setPlayers(List<Player> players) {
         this.players = players;
+    }
+
+    public List<FinalScore> calculateScores() {
+        FinalScore finalScore = new FinalScore();
+        Player player = getPlayers().get(0);
+        player.getCardsInHand().forEach(card -> {
+            finalScore.setScore(finalScore.getScore() + card.getValue());
+        });
+        finalScore.setScore(finalScore.getScore() - player.getChipCount());
+        return Collections.singletonList(finalScore);
     }
 }

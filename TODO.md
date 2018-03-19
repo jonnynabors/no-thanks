@@ -16,7 +16,7 @@ Cumulative scores of non-consecutive cards.
 ## Rules
 When to play a token.   
 When to pick up a card.   
-What to do if no tokens left in hand. 
+~~What to do if no tokens left in hand.~~
 
 ## Turns
 ~~Pick up a card.~~  
