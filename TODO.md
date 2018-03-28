@@ -9,9 +9,9 @@ Maintain score of player over 3 rounds
 
 
 ## Scoring
-One negative point per token.  
+~~One negative point per token.~~  
 Scoring runs of cards.  
-Cumulative scores of non-consecutive cards. 
+~~Cumulative scores of non-consecutive cards.~~ 
 
 ## Rules
 When to play a token.   
