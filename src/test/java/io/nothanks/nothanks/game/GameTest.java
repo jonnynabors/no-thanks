@@ -67,4 +67,16 @@ public class GameTest {
         assertEquals(29, actualScores.get(0).getScore());
     }
 
+    @Test
+    public void shouldCalculateRunsOfCards() {
+        Card fifteen = new Card(15);
+        Card sixteen = new Card(16);
+        Card seventeen = new Card(17);
+
+        player1.setCardsInHand(Arrays.asList(sixteen, fifteen, seventeen));
+
+        Game singlePlayerGame = Game.withOnePlayer(player1);
+        List<FinalScore> actualScores = singlePlayerGame.calculateScores();
+        assertEquals(15, actualScores.get(0).getScore());
+    }
 }

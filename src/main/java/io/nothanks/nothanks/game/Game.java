@@ -16,11 +16,19 @@ public class Game {
     private Deck deck;
     private List<Player> players;
 
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
     public static Game withOnePlayer(Player player1) {
         Game game = new Game();
-        List<Player> players = new ArrayList<>();
-        players.add(player1);
-        game.setPlayers(players);
+        List<Player> gamePlayers = new ArrayList<>();
+        gamePlayers.add(player1);
+        game.setPlayers(gamePlayers);
         return game;
     }
 
@@ -45,17 +53,11 @@ public class Game {
         }
     }
 
-    public List<Player> getPlayers() {
-        return players;
-    }
-
-    public void setPlayers(List<Player> players) {
-        this.players = players;
-    }
-
     public List<FinalScore> calculateScores() {
         FinalScore finalScore = new FinalScore();
-        Player player = getPlayers().get(0);
+        Player player = this.players.get(0);
+        List<Card> cardsInHand = player.getCardsInHand();
+        Collections.sort(cardsInHand);
         player.getCardsInHand().forEach(card -> {
             finalScore.setScore(finalScore.getScore() + card.getValue());
         });

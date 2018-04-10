@@ -1,8 +1,8 @@
 package io.nothanks.nothanks.card;
 
-public class Card {
+public class Card implements Comparable<Card>{
 
-    private int value;
+    private Integer value;
 
     public Card(Integer value) {
         this.value = value;
@@ -14,5 +14,10 @@ public class Card {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    @Override
+    public int compareTo(Card o) {
+        return this.value - o.value;
     }
 }
