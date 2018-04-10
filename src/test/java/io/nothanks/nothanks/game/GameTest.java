@@ -1,6 +1,5 @@
 package io.nothanks.nothanks.game;
 
-import io.nothanks.nothanks.card.Card;
 import io.nothanks.nothanks.player.Player;
 import io.nothanks.nothanks.score.FinalScore;
 import org.junit.Before;
@@ -24,8 +23,8 @@ public class GameTest {
     @Test
     public void shouldDealTopCardOfDeckWhenGameStarts() {
         game.initializeGame();
-        Card card = game.dealCard();
-        assertTrue(card.getValue() >= 3);
+        Integer firstCard = game.dealCard();
+        assertTrue(firstCard >= 3);
     }
 
     @Test
@@ -58,9 +57,7 @@ public class GameTest {
 
     @Test
     public void shouldCountTokensAsNegativePoints() {
-        Card twentyOne = new Card(21);
-        Card fifteen = new Card(15);
-        player1.setCardsInHand(Arrays.asList(twentyOne, fifteen));
+        player1.setCardsInHand(Arrays.asList(21, 15));
         player1.setChipCount(7);
         Game singlePlayerGame = Game.withOnePlayer(player1);
         List<FinalScore> actualScores = singlePlayerGame.calculateScores();
@@ -69,11 +66,9 @@ public class GameTest {
 
     @Test
     public void shouldCalculateRunsOfCards() {
-        Card fifteen = new Card(15);
-        Card sixteen = new Card(16);
-        Card seventeen = new Card(17);
+        Integer seventeen = 17;
 
-        player1.setCardsInHand(Arrays.asList(sixteen, fifteen, seventeen));
+        player1.setCardsInHand(Arrays.asList(16, 105, seventeen));
 
         Game singlePlayerGame = Game.withOnePlayer(player1);
         List<FinalScore> actualScores = singlePlayerGame.calculateScores();

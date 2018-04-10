@@ -1,19 +1,17 @@
 package io.nothanks.nothanks.player;
 
 
-import io.nothanks.nothanks.card.Card;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
 
     private int chipCount;
-    private List<Card> cardsInHand;
+    private List<Integer> cardsInHand;
 
     public static Player withDefaultChipCount() {
         Player player = new Player();
-        List<Card> initialCards = new ArrayList<>();
+        List<Integer> initialCards = new ArrayList<>();
         player.setChipCount(11);
         player.setCardsInHand(initialCards);
         return player;
@@ -27,11 +25,11 @@ public class Player {
         this.chipCount = chipCount;
     }
 
-    public List<Card> getCardsInHand() {
+    public List<Integer> getCardsInHand() {
         return cardsInHand;
     }
 
-    public void setCardsInHand(List<Card> cardsInHand) {
+    public void setCardsInHand(List<Integer> cardsInHand) {
         this.cardsInHand = cardsInHand;
     }
 

@@ -1,6 +1,5 @@
 package io.nothanks.nothanks.game;
 
-import io.nothanks.nothanks.card.Card;
 import io.nothanks.nothanks.deck.Deck;
 import io.nothanks.nothanks.player.Player;
 import io.nothanks.nothanks.score.FinalScore;
@@ -36,7 +35,7 @@ public class Game {
         deck = Deck.with9CardsRemoved();
     }
 
-    public Card dealCard() {
+    public Integer dealCard() {
         return deck.getCards().peek();
     }
 
@@ -56,12 +55,13 @@ public class Game {
     public List<FinalScore> calculateScores() {
         FinalScore finalScore = new FinalScore();
         Player player = this.players.get(0);
-        List<Card> cardsInHand = player.getCardsInHand();
+        List<Integer> cardsInHand = player.getCardsInHand();
         Collections.sort(cardsInHand);
         player.getCardsInHand().forEach(card -> {
-            finalScore.setScore(finalScore.getScore() + card.getValue());
+            finalScore.setScore(finalScore.getScore() + card);
         });
         finalScore.setScore(finalScore.getScore() - player.getChipCount());
         return Collections.singletonList(finalScore);
     }
+
 }
