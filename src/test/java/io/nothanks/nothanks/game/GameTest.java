@@ -51,4 +51,9 @@ public class GameTest {
         singlePlayerGame.pass(player1);
     }
 
+    //TODO: Figure out how to best test game ending
+    @Test
+    public void gameEndsWhenNoCardsAreLeftInDeck() {
+    }
+
 }

@@ -29,6 +29,15 @@ public class Game {
         return game;
     }
 
+    public static Game withTwoPlayers(Player player1, Player player2) {
+        Game game = new Game();
+        List<Player> gamePlayers = new ArrayList<>();
+        gamePlayers.add(player1);
+        gamePlayers.add(player2);
+        game.setPlayers(gamePlayers);
+        return game;
+    }
+
     public void initializeGame() {
         deck = Deck.with9CardsRemoved();
     }
