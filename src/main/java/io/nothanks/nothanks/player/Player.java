@@ -1,8 +1,6 @@
 package io.nothanks.nothanks.player;
 
 
-import io.nothanks.nothanks.score.FinalScore;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

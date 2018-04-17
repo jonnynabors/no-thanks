@@ -2,11 +2,9 @@ package io.nothanks.nothanks.game;
 
 import io.nothanks.nothanks.deck.Deck;
 import io.nothanks.nothanks.player.Player;
-import io.nothanks.nothanks.score.FinalScore;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Component

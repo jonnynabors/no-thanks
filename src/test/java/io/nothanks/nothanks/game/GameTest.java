@@ -1,12 +1,8 @@
 package io.nothanks.nothanks.game;
 
 import io.nothanks.nothanks.player.Player;
-import io.nothanks.nothanks.score.FinalScore;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
