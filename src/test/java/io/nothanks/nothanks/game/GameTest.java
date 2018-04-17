@@ -55,21 +55,4 @@ public class GameTest {
         singlePlayerGame.pass(player1);
     }
 
-    @Test
-    public void shouldCountTokensAsNegativePoints() {
-        player1.setCardsInHand(Arrays.asList(21, 15));
-        player1.setChipCount(7);
-        Game singlePlayerGame = Game.withOnePlayer(player1);
-        List<FinalScore> actualScores = singlePlayerGame.calculateScores();
-        assertEquals(29, actualScores.get(0).getScore());
-    }
-
-    @Test
-    public void shouldCalculateRunsOfCards() {
-        player1.setCardsInHand(Arrays.asList(4, 16, 15, 17));
-
-        Game singlePlayerGame = Game.withOnePlayer(player1);
-        List<FinalScore> actualScores = singlePlayerGame.calculateScores();
-        assertEquals(8, actualScores.get(0).getScore());
-    }
 }

@@ -1,7 +1,10 @@
 package io.nothanks.nothanks.player;
 
 
+import io.nothanks.nothanks.score.FinalScore;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Player {
@@ -39,5 +42,18 @@ public class Player {
 
     public void decrementChipCount() {
         this.chipCount--;
+    }
+
+    public int calculateScores() {
+        List<Integer> cardsInHand = getCardsInHand();
+        Collections.sort(cardsInHand);
+        int currentPointValue = 0;
+        for (int i = 0; i < cardsInHand.size(); i++) {
+            currentPointValue += cardsInHand.get(i);
+            if (i != 0 && cardsInHand.get(i - 1) + 1 == cardsInHand.get(i)) {
+                currentPointValue -= cardsInHand.get(i);
+            }
+        }
+        return currentPointValue - getChipCount();
     }
 }

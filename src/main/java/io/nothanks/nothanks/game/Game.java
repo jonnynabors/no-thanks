@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 @Component
 public class Game {
@@ -51,22 +50,6 @@ public class Game {
         else {
             throw new NoChipsInHandException();
         }
-    }
-
-    public List<FinalScore> calculateScores() {
-        FinalScore finalScore = new FinalScore();
-        Player player = this.players.get(0);
-        List<Integer> cardsInHand = player.getCardsInHand();
-        Collections.sort(cardsInHand);
-        int currentPointValue = 0;
-        for (int i = 0; i < cardsInHand.size(); i++) {
-            currentPointValue += cardsInHand.get(i);
-            if (i != 0 && cardsInHand.get(i - 1) + 1 == cardsInHand.get(i)) {
-                currentPointValue -= cardsInHand.get(i);
-            }
-        }
-        finalScore.setScore(currentPointValue - player.getChipCount());
-        return Collections.singletonList(finalScore);
     }
 
 }
