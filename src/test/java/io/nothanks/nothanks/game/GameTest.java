@@ -66,12 +66,10 @@ public class GameTest {
 
     @Test
     public void shouldCalculateRunsOfCards() {
-        Integer seventeen = 17;
-
-        player1.setCardsInHand(Arrays.asList(16, 105, seventeen));
+        player1.setCardsInHand(Arrays.asList(4, 16, 15, 17));
 
         Game singlePlayerGame = Game.withOnePlayer(player1);
         List<FinalScore> actualScores = singlePlayerGame.calculateScores();
-        assertEquals(15, actualScores.get(0).getScore());
+        assertEquals(8, actualScores.get(0).getScore());
     }
 }
