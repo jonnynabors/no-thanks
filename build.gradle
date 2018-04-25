@@ -29,8 +29,10 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-web')
-    compile 'com.google.guava:guava:24.1-jre'
+    compile ('com.google.guava:guava:24.1-jre')
+    compile ('org.javatuples:javatuples:1.2')
     runtime('com.h2database:h2')
     compileOnly('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
+
 }

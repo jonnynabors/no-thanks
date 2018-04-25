@@ -2,6 +2,7 @@ package io.nothanks.nothanks.game;
 
 import io.nothanks.nothanks.deck.Deck;
 import io.nothanks.nothanks.player.Player;
+import org.javatuples.Pair;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ public class Game {
 
     private Deck deck;
     private List<Player> players;
+    private int chipCount;
 
     public List<Player> getPlayers() {
         return players;
@@ -40,10 +42,12 @@ public class Game {
 
     public void initializeGame() {
         deck = Deck.with9CardsRemoved();
+        chipCount = 1;
+        players.get(0).decrementChipCount();
     }
 
-    public Integer dealCard() {
-        return deck.getCards().peek();
+    public Pair<Integer, Integer> dealCard() {
+        return new Pair<>(deck.getCards().peek(), chipCount);
     }
 
     public void pickUpCardForPlayer(Player player, int pickedUpChips) {
